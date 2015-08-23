@@ -13,6 +13,10 @@ edu <- read.csv('data/edu.csv')[,c("CountryCode", "Income.Group")]
 merged <- merge(gdp, edu, by.x='code', by.y='CountryCode')
 library(dplyr)
 merged <- arrange(merged, desc(rank))
+#Q4
 grouped <- group_by(merged, Income.Group)
 
 summarize(grouped, gdp = mean(gdp, na.rm=TRUE))
+#Q5
+merged <- mutate(merged, rank.group = cut(merged$rank,5))
+table(merged$Inc, merged$rank.g)

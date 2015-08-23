@@ -3,3 +3,6 @@
 .RData
 *.csv
 *.jpg
+*.zip
+*.RProj
+*.rds
